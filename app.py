@@ -84,9 +84,12 @@ def serialize_datetime_objects(obj: Any) -> Any:
 app = FastAPI(title="Career Information RAG System", version="1.0.0")
 
 # Add CORS middleware
+# Get allowed origins from environment variable or use defaults
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # React dev server
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
