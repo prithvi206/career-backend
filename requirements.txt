@@ -1,0 +1,15 @@
+fastapi[standard]
+langchain
+python-dotenv
+langchain-google-genai
+langchain-community
+psycopg2-binary
+chromadb
+PyPDF2
+python-multipart
+google-generativeai
+langchain-chroma
+sentence-transformers
+langsmith
+requests
+pymongo
